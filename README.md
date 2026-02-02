@@ -1,73 +1,114 @@
-# React + TypeScript + Vite
+# 未经授权的补课游戏 (Fuck U Unauthorized Supplements)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个关于识别和处理未经授权补课的互动教育游戏，使用 React + TypeScript + Vite 构建。
 
-Currently, two official plugins are available:
+## 项目简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+本项目旨在通过游戏化的方式，帮助用户了解如何识别和应对未经授权的补课，提高学生和家长的权益保护意识。游戏包含多个难度级别，玩家需要收集证据、分析情况并做出正确的决策。
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Radix UI
+- React Hook Form
+- Zod
+- GSAP (动画)
 
-## Expanding the ESLint configuration
+## 项目结构
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/
+│   ├── ui/           # UI 组件库
+│   └── Changelog.tsx # 变更日志组件
+├── hooks/
+│   ├── use-mobile.ts    # 移动端检测钩子
+│   └── useGameLogic.ts  # 游戏逻辑钩子
+├── lib/
+│   └── utils.ts     # 工具函数
+├── sections/
+│   ├── HeroSection.tsx  # 游戏开始界面
+│   ├── GameSection.tsx  # 游戏主界面
+│   └── EndSection.tsx   # 游戏结束界面
+├── types/
+│   └── game.ts      # 游戏类型定义
+├── App.tsx          # 主应用组件
+├── main.tsx         # 应用入口
+└── index.css        # 全局样式
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 游戏功能
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **多个难度级别**：根据玩家的经验水平选择合适的挑战
+- **证据收集**：在游戏过程中收集有关补课的证据
+- **AI 辅助**：获取 AI 提供的策略、证据和渠道建议
+- **时间管理**：通过"等待一天"功能推进游戏进程
+- **报告提交**：根据收集的证据提交分析报告
+- **游戏状态跟踪**：实时显示游戏状态和进度
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 开始游戏
+
+### 安装依赖
+
+```bash
+npm install
 ```
+
+### 开发模式运行
+
+```bash
+npm run dev
+```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 预览生产版本
+
+```bash
+npm run preview
+```
+
+### 代码检查
+
+```bash
+npm run lint
+```
+
+## 游戏玩法
+
+1. **开始游戏**：在主界面选择难度级别并启用/禁用 AI 辅助
+2. **收集证据**：点击相关区域收集证据
+3. **分析情况**：根据收集的证据分析补课的合法性
+4. **获取建议**：使用 AI 辅助功能获取策略建议
+5. **提交报告**：根据分析结果提交报告
+6. **等待结果**：点击"等待一天"查看报告结果
+7. **完成游戏**：根据最终结果查看游戏结束界面
+
+## 贡献指南
+
+欢迎提交问题和改进建议！请确保遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建新分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开 Pull Request
+
+## 许可证
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+
+## 联系方式
+
+如果您有任何问题或建议，请随时联系我们。
+
+---
+
+**注意**：本游戏仅用于教育目的，不构成法律建议。在现实生活中遇到可疑补课时，请咨询专业人士。
