@@ -112,7 +112,7 @@ npm run lint
 
 ## 联系方式
 
-如果您有任何建议，或需要反馈问题，请提交 Issue ，或填写 DCR 的[反馈表单](https://downscryingforrights.feishu.cn/share/base/form/shrcnMoalsQV228hJ2WLOvuKutb)
+如果您有任何建议，或需要反馈问题，请提交 Issue ，或填写 DCR 的[反馈表单](https://downscryingforrights.feishu.cn/share/base/form/shrcnMoalsQV228hJ2WLOvuKutb)。
 ---
 
 **注意**：本游戏仅用于娱乐目的，不构成法律建议。在现实生活中遇到类似情况时，请咨询专业人士。
